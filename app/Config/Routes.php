@@ -12,3 +12,5 @@ $routes->post('tasks', 'TaskController::store');
 
 $routes->get('tasks/edit/(:num)', 'TaskController::edit/$1');
 $routes->post('tasks/(:num)', 'TaskController::update/$1');
+
+$routes->delete('tasks/delete/(:num)', 'TaskController::delete/$1');

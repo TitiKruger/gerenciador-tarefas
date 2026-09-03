@@ -63,4 +63,11 @@ class TaskController extends BaseController{
 
         return redirect()->to('/tasks');
     }
+
+    public function delete($id){
+    $model = new TaskModel();
+    $model->delete($id);
+
+    return redirect()->to('/tasks');
+    }
 }

@@ -49,7 +49,7 @@
                                     </td>
 
                                     <td>
-                                        <form action="<?= base_url('tasks/delete/' . $tarefa['id']) ?>" method="post" class="d-inline">
+                                        <form action="<?= base_url('tasks/delete/' . $tarefa['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('Tem certeza que deseja excluir esta tarefa?');">
                                             <?= csrf_field() ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-sm btn-outline-danger" title="Excluir">🗑️</button>
