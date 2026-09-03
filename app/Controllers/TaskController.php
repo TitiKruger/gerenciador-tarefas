@@ -12,4 +12,27 @@ class TaskController extends BaseController{
         return view('tasks/index', ['tarefas' => $tarefas]);
     }
 
+    public function create(){
+        return view('tasks/create');
+    }
+
+    public function store(){
+        $rules = [
+            'title' => 'required|min_length[3]',
+            'status' => 'required|in_list[pendente,em andamento,concluída]',
+        ];
+
+        if (! $this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $model = new TaskModel();
+        $model->save([
+            'title' => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description'),
+            'status' => $this->request->getPost('status')
+        ]);
+
+        return redirect()->to('/tasks');
+    }
 }
