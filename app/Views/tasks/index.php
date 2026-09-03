@@ -28,7 +28,7 @@
                     <tbody>
                         <?php if(empty($tarefas)): ?>
                             <tr>
-                                <td colspan="4" class="text-center">Nenhuma tarefa cadastrada</td>
+                                <td colspan="5" class="text-center">Nenhuma tarefa cadastrada</td>
                             </tr>
                         <?php else: ?>
                             <?php foreach($tarefas as $tarefa): ?>
