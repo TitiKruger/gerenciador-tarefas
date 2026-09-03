@@ -35,4 +35,23 @@ class TaskController extends BaseController{
 
         return redirect()->to('/tasks');
     }
+
+    public function edit($id){
+        $model = new TaskModel();
+        $tarefa= $model->find($id);
+
+        return view('tasks/edit', ['tarefa' => $tarefa]);
+    }
+
+    public function update($id){
+        $model = new TaskModel();
+
+        $model->update($id, [
+            'title'  => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description'),
+            'status' => $this->request->getPost('status')
+        ]);
+
+        return redirect()->to('/tasks');
+    }
 }
