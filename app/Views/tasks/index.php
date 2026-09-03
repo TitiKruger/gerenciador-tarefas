@@ -19,6 +19,7 @@
                     <thead>
                         <tr>
                             <th class="text-start">Título</th>
+                            <th class="text-start">Descrição</th>
                             <th style="width: 160px;">Status</th>
                             <th style="width: 80px;">Editar</th>
                             <th style="width: 80px;">Excluir</th>
@@ -33,6 +34,7 @@
                             <?php foreach($tarefas as $tarefa): ?>
                                 <tr>
                                     <td class="text-start"><?= esc($tarefa['title']) ?></td>
+                                    <td class="text-start text-break"><?= esc($tarefa['description']) ?></td>
 
                                     <td>
                                         <?php if($tarefa['status'] === 'concluída'): ?>
