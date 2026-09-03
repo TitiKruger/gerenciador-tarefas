@@ -44,6 +44,15 @@ class TaskController extends BaseController{
     }
 
     public function update($id){
+        $rules = [
+            'title' => 'required|min_length[3]',
+            'status' => 'required|in_list[pendente,em andamento,concluída]',
+        ];
+
+        if (! $this->validate($rules)) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
         $model = new TaskModel();
 
         $model->update($id, [

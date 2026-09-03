@@ -28,7 +28,7 @@
 
                         <div class="mb-3">
                             <label for="title" class="form-label">Título</label>
-                            <input type="text" class="form-control" name="title" value="<?= old('title') ?>">
+                            <input type="text" class="form-control" name="title" value="<?= old('title') ?>" required>
                         </div>
                         
                         <div class="mb-3">

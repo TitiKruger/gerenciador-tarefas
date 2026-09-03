@@ -31,7 +31,7 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Título</label>
-                        <input type="text" class="form-control" name="title" value="<?= esc(old('title', $tarefa['title'])) ?>">
+                        <input type="text" class="form-control" name="title" value="<?= esc(old('title', $tarefa['title'])) ?>" required>
                     </div>
 
                     <div class="mb-3">
